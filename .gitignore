@@ -49,3 +49,13 @@ _zip
 
 /assets/js/*hydejack-*
 /_sass/*/__*__/*
+
+node_modules
+.env
+coverage
+coverage.json
+typechain
+
+#Hardhat files
+cache
+artifacts

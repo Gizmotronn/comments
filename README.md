@@ -1,4 +1,15 @@
-# Comment tool for NFTS
-Allows users to comment on specific NFTs in a collection (via the collection's website) using their ethereum address. 
+# Basic Sample Hardhat Project
 
-Certain permissions can be setup by modifying the smart contract (for example, you can set the commenting feature to only be enabled if the user is a holder in the collection)
+This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+
+Try running some of the following tasks:
+
+```shell
+npx hardhat accounts
+npx hardhat compile
+npx hardhat clean
+npx hardhat test
+npx hardhat node
+node scripts/sample-script.js
+npx hardhat help
+```
