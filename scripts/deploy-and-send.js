@@ -1,7 +1,7 @@
 const hre = require("hardhat");
 const { mainModule } = require("process");
 
-async function Main() {
+async function main() {
   // Get contract to deploy
   const CommentsContract = await hre.ethers.getContractFactory("Comments");
   const contract = await CommentsContract.deploy();

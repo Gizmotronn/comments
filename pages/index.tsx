@@ -4,6 +4,11 @@ import { QueryClient, QueryClientProvider, QueryCache } from "react-query";
 import { ChakraProvider, Box, Heading } from "@chakra-ui/react";
 import { Toaster, toast } from "react-hot-toast";
 import theme from "../theme";
+import { Provider as WagmiProvider } from "wagmi";
+import { providers } from "ethers";
+
+// Localhost (ganache/hardhat) provider
+const provider = providers.getDefaultProvider("http://localhost:8545");
 
 // Create a react-query client
 const queryClient = new QueryClient({
