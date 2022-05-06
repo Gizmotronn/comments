@@ -1,15 +1,11 @@
-# Basic Sample Hardhat Project
+A web3 application that enables users to comment on their own NFTs
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, a sample script that deploys that contract, and an example of a task implementation, which simply lists the available accounts.
+# Setup
+`git clone https://github.com/gizmotronn/comments`
 
-Try running some of the following tasks:
+`npm install`
+`npm start`
 
-```shell
-npx hardhat accounts
-npx hardhat compile
-npx hardhat clean
-npx hardhat test
-npx hardhat node
-node scripts/sample-script.js
-npx hardhat help
-```
+# Future releases
+* Integration with Moralis
+* Integration with [gizmotronn/mint](https://github.com/gizmotronn/mint)
