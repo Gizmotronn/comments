@@ -14,6 +14,7 @@ const CommentEditor: React.FunctionComponent<CommentEditorProps> = ({
     topic,
 }) => {
     const [message, setMessage] = React.useState("");
+    // const [tags, setTags] = React.useState("");
     const mutation = useAddComment();
     const [accountQuery] = useAccount();
     
@@ -31,6 +32,18 @@ const CommentEditor: React.FunctionComponent<CommentEditorProps> = ({
                     rounded="2x1"
                     fontSize="lg"
                 />
+                {/*
+                <Textarea
+                    value={tags}
+                    onChange={(e) => setTags(e.target.value)}
+                    placeholder="Add some tags..."
+                    p={3}
+                    flex={1}
+                    bg="whiteAlpha.100"
+                    rounded="2x1"
+                    fontSize="lg"
+                />
+                */}
             </HStack>
             <AuthButton
                 size="sm"
