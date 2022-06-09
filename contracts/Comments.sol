@@ -16,8 +16,6 @@ contract Comments {
 
     // Notify users that a comment was added
     event CommentAdded(Comment comment);
-    // Fetch a list of comments for a topic
-    function getCommments(string calldata topic) public view returns(Comment[] memory) {}
 
     // Store each topic with its array of associated comments
     mapping(string => Comment[]) private commentsByTopic;
