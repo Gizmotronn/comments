@@ -19,6 +19,7 @@ export function useSession(): SupashipUserInfo {
         session: null,
     });
     const [channel, setChannel] = useState<RealtimeChannel | null>(null);
+    const navigate = useNavigate();
     useEffect(() => {
         supaClient.auth.getSession().then(({ data: { session } }) => {
             setUserInfo({ ...userInfo, session });
@@ -50,6 +51,8 @@ export function useSession(): SupashipUserInfo {
             .filter("user_id", "eq", userId);
         if (data?.[0]) {
             setUserInfo({ ...userInfo, profile: data?.[0] })
+        } else {
+            navigate('/welcome');
         }
         return supaClient
             .channel(`public:user_profiles`)
