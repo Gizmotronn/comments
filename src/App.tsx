@@ -4,7 +4,7 @@ import './App.css';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import MessageBoard from './MessageBoard';
 import AllPosts from './AllPosts';
-import Welcome from './Welcome';
+import Welcome, { welcomeLoader } from './Welcome';
 import PostView from './PostView';
 import Navbar from './Navbar';
 import { SupashipUserInfo, useSession  } from './use-session';
@@ -29,7 +29,8 @@ const router = createBrowserRouter([
     },
     {
       path: 'welcome',
-      element: <Welcome />
+      element: <Welcome />,
+      loader: welcomeLoader,
     }],
   },
 ]);

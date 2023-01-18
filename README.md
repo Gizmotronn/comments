@@ -12,6 +12,8 @@ Whenever the `...original-ddl.sql` migration is updated, make sure to update the
 npx supabase gen types typescript --local > src/database.types.ts
 ```
 
+Make sure to edit any 'path: unknown' fields with `path: string`.
+
 # Future releases
 * Integration with Moralis
 * Integration with [gizmotronn/mint](https://github.com/gizmotronn/mint)
