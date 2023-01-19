@@ -1,12 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { UserContext } from "./App";
-import { castVote } from './cast-vote';
+import { castVote } from "./cast-vote";
 import { CreatePost } from "./CreatePost";
 import { GetPostsResponse } from "./database.types";
 import { supaClient } from "./supa-client";
 import { timeAgo } from './time-ago';
-import { UpVote } from './upvote';
+import { Upvote } from './upvote';
 import { usePostScore } from './use-post-score';
 
 export function AllPosts() {
@@ -73,7 +73,7 @@ function Post ({ postData, myVote, onVoteSuccess }: { postData: GetPostsResponse
     return (
         <div className="post-container">
       <div className="post-upvote-container">
-        <UpVote
+        <Upvote
           direction="up"
           filled={myVote === "up"}
           enabled={!!session}
@@ -91,7 +91,7 @@ function Post ({ postData, myVote, onVoteSuccess }: { postData: GetPostsResponse
         <p className="text-center" data-e2e="upvote-count">
           {score}
         </p>
-        <UpVote
+        <Upvote
           direction="down"
           filled={myVote === "down"}
           enabled={!!session}

@@ -1,17 +1,17 @@
 import React, { useContext, useEffect, useMemo, useRef, useState } from "react";
 import { useParams } from "react-router-dom";
 import { UserContext } from "./App";
-import { castVote } from './cast-vote';
+import { castVote } from "./cast-vote";
 import { GetSinglePostWithCommentResponse } from "./database.types";
 import { supaClient } from "./supa-client";
 import { timeAgo } from "./time-ago";
-import { Upvote } from './upvote'
+import { Upvote } from './upvote';
 import { usePostScore } from './use-post-score';
 import { SupashipUserInfo } from "./use-session";
 
 export interface Post { id: string; author_name: string; title: string; content: string; score: number; created_at: string; path: string; }
 export interface Comment { id: string; author_name: string; content: string; score: number; created_at: string; path: string; comments: Comment[]; }
-interface PostDetailData { post: GetSinglePostWithCommentResponse | null; comments: GetSinglePostWithCommentResponse[]; myVotes?: Record<string, 'up' | 'down' | undefined; }
+interface PostDetailData { post: GetSinglePostWithCommentResponse | null; comments: GetSinglePostWithCommentResponse[]; myVotes?: Record<string, 'up' | 'down' | undefined> }
 
 export async function getPostDetails({params: { postId }, userContext, }: { params: { postId: string }; userContext: SupashipUserInfo; }): Promise<PostDetailData | undefined> {
     const { data, error } = await supaClient
@@ -72,7 +72,7 @@ export function PostView() {
     );
 }
 
-function PostPresentation({ postDetailData, userContext, setBumper, bumper nestedComments, }: {
+function PostPresentation({ postDetailData, userContext, setBumper, bumper, nestedComments, }: {
     postDetailData: PostDetailData; userContext: SupashipUserInfo; setBumper: (x: number) => void; bumper: number; nestedComments: Comment[];
 }) {
     const score = usePostScore(

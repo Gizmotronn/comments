@@ -36,6 +36,15 @@ create table post_votes (
     unique (post_id, user_id)
 );
 
+create table comments (
+  id uuid primary key default uuid_generate_v4() not null,
+  created_at timestamp with time zone default now() not null,
+  updated_at timestamp with time zone default now() not null,
+  username varchar not null,
+  payload text not null,
+  reply_of uuid not null,
+)
+
 create function initialize_post_score()
 returns trigger
 language plpgsql
